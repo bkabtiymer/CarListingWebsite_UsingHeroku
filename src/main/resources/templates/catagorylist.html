@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AddCatagory</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 300px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+    <a class="navbar-brand" href="https://res.cloudinary.com/db9bfssj4/image/upload/v1558720654/NbDovdB_gexlp0.gif">CarBuy</a>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/addcatagory">Add Catagory</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/addcars">Add Car</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Cars Listing</a>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="spinner-grow text-muted"></div>
+        <div class="spinner-grow text-primary"></div>
+        <div class="spinner-grow text-success"></div>
+        <div class="spinner-grow text-info"></div>
+        <div class="spinner-grow text-warning"></div>
+        <div class="spinner-grow text-danger"></div>
+        <div class="spinner-grow text-secondary"></div>
+        <div class="spinner-grow text-dark"></div>
+        <div class="spinner-grow text-light"></div>
+    </div>
+</nav>
+<br>
+<br>
+
+<div class="row">
+    <div class="column">
+        <img src="https://res.cloudinary.com/db9bfssj4/image/upload/v1558720654/NbDovdB_gexlp0.gif" alt="Threecars" id="logo">
+    </div>
+    <div class="column">
+        <img src="https://res.cloudinary.com/db9bfssj4/image/upload/v1558722813/Maserati_252520Quattroporte_thumb_25255B1_25255D_bvepjg.gif" alt="Jaguar" id="logo1">
+    </div>
+    <div class="column">
+        <img src="https://res.cloudinary.com/db9bfssj4/image/upload/v1558720654/NbDovdB_gexlp0.gif" alt="Kippt" id="logo2">
+    </div>
+</div>
+<div class="container">
+    <div>
+        <h2 >Catagories</h2>
+    </div>
+    <table class="table">
+
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Catagory-Name</th>
+
+        </thead>
+        <tbody>
+        <tr th:each="catagory: ${catagories}" >
+            <td th:text="${catagory.name}"></td>
+            <td>
+                <div >
+                    <a th:href="@{/update/{id}(id=${catagory.id})}" class="btn btn-outline-secondary">Update Catagory</a>
+                    <a th:href="@{/detail/{id}(id=${catagory.id})}" class="btn btn-outline-secondary">Details</a>
+                    <a th:href="@{/delete/{id}(id=${catagory.id})}" class="btn btn-outline-danger">Delete</a>
+                    <a th:href="@{/addcars}" class="btn btn-outline-secondary">Add Cars</a>
+
+                </div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
