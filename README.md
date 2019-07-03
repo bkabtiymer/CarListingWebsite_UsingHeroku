@@ -15,11 +15,19 @@ Deploy your application to Heroku after you switch the database to PostgreSQL.
 ## Evaluation Criteria: ##
 
 Add categories
+
 Add cars with photos (Cloudinary optional but recommended)
-When adding cars, assign a category to that car
+
+**When adding cars, assign a category to that car**
+
 Update photos of cars
+
 Update car information
+
 Delete cars
+
 View car details
+
 List cars that were added
+
 List categories
